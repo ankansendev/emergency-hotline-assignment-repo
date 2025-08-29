@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency-hotline</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+                        <!-- tailwind cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+                            <!-- style.css link -->
     <link rel="stylesheet" href="./styles/style.css">
+                        <!-- font awsome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-gray-50">
@@ -24,8 +26,8 @@
             <span id="coinCount" class="font-bold w-[32px] h-[24px]">100</span>
             <img src="./assets/coin.png" alt="" class="w-[24px] h-[24px]">
         </div>
-        <button class="bg-green-500 text-white font-semibold rounded-xl px-6 py-2 ml-2 flex items-center">
-           2 Copy 
+        <button id="navCopyBtn" class="bg-green-500 text-white font-semibold rounded-xl px-6 py-2 ml-2 flex items-center">
+        <span id="navCopyCount">0</span> Copy  
         </button>
            
         </div>
@@ -42,7 +44,7 @@
        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div class="lg:col-span-8 ">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- card1 -->
+                <!-- card 01 -->
                  <div class="bg-white rounded-2xl shadow-5">
                     <div class="flex justify-between items-start">
                         <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
@@ -69,7 +71,7 @@
                 </a>
             </div>
          </div>
-                <!-- card2 -->
+                <!-- card 02 -->
                  
         <div class="bg-white rounded-2xl shadow-5">
                     <div class="flex justify-between items-start">
@@ -213,7 +215,9 @@
                                     <!-- history section -->
        <div class="lg:col-span-4 bg-white rounded-2xl shadow p-5 h-fit">
         <div class="flex justify-between items-center mb-4">
-            <h2 class="font-bold text-lg">Call History</h2>
+            <h2 class="font-bold text-lg">
+                <i class="fa-solid fa-clock"></i>
+                Call History</h2>
             <button id="clearHistoryBtn" class="bg-green-500 text-white font-semibold rounded-xl px-4 py-2 flex items-center ">Clear</button>
 
         </div>
@@ -231,6 +235,7 @@
   
 
     </main>
+                <!-- js link -->
     <script src="./js/dynamic.js"></script>
 </body>
 </html>

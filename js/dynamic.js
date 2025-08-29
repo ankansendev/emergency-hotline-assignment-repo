@@ -51,4 +51,25 @@ let heartCount = 0;
             historyList.innerHTML = "";
         });
 
+        let copyCount = 0;
+        const copyButtons = document.querySelectorAll(".border");
+        const navCopyCount = document.getElementById("navCopyCount");
+
+
+        copyButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const card = button.closest(".bg-white");
+                const ServiceName = card.querySelector("h2").textContent;
+                const ServiceNumber = card.querySelector("p.text-3xl").textContent;
+
+
+                navigator.clipboard.writeText(ServiceNumber);
+
+                copyCount++;
+                navCopyCount.textContent = copyCount;
+
+                alert(`copied ${ServiceName} (${ServiceNumber}) - total copies: ${copyCount}`);
+            });
+        });
+
 
