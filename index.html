@@ -214,17 +214,11 @@
        <div class="lg:col-span-4 bg-white rounded-2xl shadow p-5 h-fit">
         <div class="flex justify-between items-center mb-4">
             <h2 class="font-bold text-lg">Call History</h2>
-            <button class="text-sm text-red-500 ">Clear</button>
+            <button id="clearHistoryBtn" class="bg-green-500 text-white font-semibold rounded-xl px-4 py-2 flex items-center ">Clear</button>
 
         </div>
         <ul id="historyList" class="space-y-2">
-            <li class="flex justify-between bg-gray-100 px-3 py-2 rounded-lg text-sm">
-                <span>National Emergency Number</span><span>11:36 Am</span>
-            </li>
-            
-            <li class="flex justify-between bg-grey-100 px-3 py-2 rounded-lg">
-                <span>National Emergency Number</span><span>11:36 Am</span>
-            </li>
+
         </ul>
 
        </div> 
@@ -255,7 +249,8 @@
         const coinDisplay = document.getElementById("coinCount");
 
         const callButtons = document.querySelectorAll(".call-btn");
-        const historyList = document.getElementById("historyList")
+        const historyList = document.getElementById("historyList");
+        const clearHistoryBtn = document.getElementById("clearHistoryBtn");
 
         callButtons.forEach(button =>{
             button.addEventListener("click", (e) =>{
@@ -267,6 +262,7 @@
 
         if(coinCount < 20){
             alert("Not enough coins to make a call!");
+            return;
         }
 
         coinCount -= 20;
@@ -283,6 +279,10 @@
         
         
     
+        });
+
+        clearHistoryBtn.addEventListener("click", () => {
+            historyList.innerHTML = "";
         });
 
 
